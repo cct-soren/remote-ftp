@@ -1,13 +1,14 @@
 {
-  "name": "remote-ftp",
+  "name": "pulsar-remote-ftp",
   "main": "./lib/remote-ftp",
-  "version": "2.2.4",
+  "version": "2.3.0",
   "description": "Enable browsing remote FTP/FTPS/SFTP just like the built-in Tree View. Requires a project.",
   "activationCommands": [],
   "repository": "https://github.com/icetee/remote-ftp",
   "license": "MIT",
   "engines": {
-    "atom": ">=1.22.1 <2.0.0"
+    "atom": ">=1.22.1 <2.0.0",
+    "pulsar": ">=1.100.0"
   },
   "consumedServices": {
     "file-icons.element-icons": {
