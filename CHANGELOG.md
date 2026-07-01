@@ -2,6 +2,18 @@
 
 ## [Unreleased]
 
+## [3.0.0] - 2026-06-29
+
+### Changed
++ Forked as `pulsar-remote-ftp` — package now targets [Pulsar](https://pulsar-edit.dev/) instead of Atom
++ Renamed package from `remote-ftp` to `pulsar-remote-ftp` (can coexist with original)
++ Bumped version to 3.0.0 to reflect the clean break from the Atom ecosystem
++ Added Pulsar engine declaration (`>=1.100.0`) to `package.json`
+
+### Fixed
++ Replaced deprecated `new Buffer()` with `Buffer.from()` in `ftp.js` and `sftp.js` — removed in Node.js 10+
++ Removed private Atom internal API usage (`inlineListenersByCommandName`) in password dialog — not available in Pulsar; replaced with `event.stopImmediatePropagation()`
+
 ## [2.2.4] - 2019-12-24
 
 ## Fixed
