@@ -8,11 +8,9 @@
 
 .remote-ftp-view {
   position: relative;
-  display: flex;
-  flex-direction: column;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: auto;
 
   > .offline {
     overflow: hidden;
@@ -43,14 +41,11 @@
     }
   }
 
-  > .ftptree-view {
-    flex: 1;
-    min-height: 0;
-    overflow-y: auto;
-  }
-
   > .queue {
-    flex: none;
+    position: sticky;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: block;
     line-height: 0;
     width: 100%;
