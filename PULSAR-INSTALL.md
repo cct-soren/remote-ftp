@@ -8,6 +8,8 @@ This is a fork of [icetee/remote-ftp](https://github.com/icetee/remote-ftp), upd
 - Added Pulsar engine declaration (`>=1.100.0`)
 - Fixed `new Buffer()` → `Buffer.from()` (removed in Node.js 10+)
 - Removed private Atom internal API usage in the password dialog (`inlineListenersByCommandName`)
+- Fully migrated all views from `atom-space-pen-views` (SpacePen/jQuery) to plain DOM — `atom-space-pen-views` dependency removed
+- Progress bar visible during transfers; queue panel auto-expands while transfers are active
 
 ## Requirements
 
@@ -45,4 +47,5 @@ After any code change, press `Ctrl+Shift+F5` in Pulsar to reload. No reinstall n
 
 ## Known remaining issues
 
-See the audit notes in the commit history. The SpacePen view system and the `ssh2` dependency are the next major items to address.
+- The `ssh2` dependency is pinned to an older version (`^0.8.7`) — may need updating for newer Node.js/OpenSSL compatibility
+- The queue panel appears at the bottom of the scroll area on very long file lists (layout limitation)

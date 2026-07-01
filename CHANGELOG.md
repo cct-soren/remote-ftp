@@ -2,6 +2,19 @@
 
 ## [Unreleased]
 
+## [3.1.0] - 2026-07-01
+
+### Changed
++ Fully migrated all views from `atom-space-pen-views` (SpacePen/jQuery) to plain DOM — removes the deprecated `atom-space-pen-views` dependency entirely
++ Queue panel now auto-expands to 200px during active file transfers and collapses when the queue is empty
++ Queue panel height reduced from 300px to 200px for a less intrusive UI
+
+### Fixed
++ Progress bar now correctly visible during transfers (was hidden by `display: none` CSS baseline)
++ `Cannot read property 'data' of undefined` error on toggle — TreeView constructor now receives and stores storage correctly
++ `.attr()` calls on tree root name/path updated to `setAttribute()` after DOM migration
++ `show()` / `hide()` methods added to TreeView for Pulsar pane item protocol compatibility
+
 ## [3.0.0] - 2026-06-29
 
 ### Changed
