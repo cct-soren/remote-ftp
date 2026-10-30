@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+### Fixed
++ SFTP connections no longer hang forever on "Remote FTP: Connecting..." under Pulsar 1.133.0 (Electron 32 / Node 20). `ssh2@1.x` exports `{ Client, ... }` instead of being the constructor itself, so `new SSH2()` threw `_ssh.default is not a constructor` and aborted the connection silently
++ SSH algorithm lists no longer include ciphers that `ssh2@1.x` rejects outright (`blowfish-cbc`, `cast128-cbc`, `arcfour`, `arcfour128`, `arcfour256`), which previously threw `Unsupported algorithm: ...` and blocked the handshake
++ FTP `forcePasv` option now honors the connection config instead of always being forced to `true`
+
+### Changed
++ Replaced the deprecated `ssh2-streams` package (used only for algorithm name lists) with curated, `ssh2@1.x`-valid lists defined in `client.js`; removed `ssh2-streams` from dependencies
+
 ## [3.1.0] - 2026-07-01
 
 ### Changed
